@@ -38,7 +38,7 @@ require! [redo, fs, LiveScript]
 
 <- redo.if-change process.argv.2 + '.ls'
 
-fs.read-file-sync process.argv[2] + '.lsc', \utf8
+fs.read-file-sync process.argv[2] + '.ls', \utf8
 |> LiveScript.compile
 |> process.stdout.write
 
