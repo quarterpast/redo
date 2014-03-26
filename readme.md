@@ -42,7 +42,6 @@ fs.read-file-sync process.argv[2] + '.lsc', \utf8
 |> LiveScript.compile
 |> process.stdout.write
 
-});
 ```
 
 licence
