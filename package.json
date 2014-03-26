@@ -1,6 +1,6 @@
 {
   "name": "redo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "js interface to https://github.com/apenwarr/redo",
   "main": "index.js",
   "scripts": {
