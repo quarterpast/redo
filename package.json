@@ -7,15 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "redo":          "./bin/redo",
-    "redo-always":   "./bin/redo-always",
-    "redo-ifchange": "./bin/redo-ifchange",
-    "redo-ifcreate": "./bin/redo-ifcreate",
-    "redo-ood":      "./bin/redo-ood",
-    "redo-sources":  "./bin/redo-sources",
-    "redo-stamp":    "./bin/redo-stamp",
-    "redo-targets":  "./bin/redo-targets",
-    "redo-unlocked": "./bin/redo-unlocked"
+    "redo":          "./bin/redo.py",
+    "redo-always":   "./bin/redo-always.py",
+    "redo-ifchange": "./bin/redo-ifchange.py",
+    "redo-ifcreate": "./bin/redo-ifcreate.py",
+    "redo-ood":      "./bin/redo-ood.py",
+    "redo-sources":  "./bin/redo-sources.py",
+    "redo-stamp":    "./bin/redo-stamp.py",
+    "redo-targets":  "./bin/redo-targets.py",
+    "redo-unlocked": "./bin/redo-unlocked.py"
   },
   "repository": {
     "type": "git",

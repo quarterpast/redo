@@ -1,10 +1,10 @@
 var spawn = require('child_process').spawn;
 var bins = require('./package.json').bin;
 
-function factory(cmd) {
+function factory(cmd, path) {
   function redo(deps, cb) {
     deps = [].concat(deps);
-    spawn('./bin/'+cmd, deps, {stdio: 'inherit'}).on('close', function(code) {
+    spawn(path, deps, {stdio: 'inherit'}).on('close', function(code) {
       if(code !== 0) return process.exit(code);
       if(typeof cb === 'function') cb();
     });
@@ -18,5 +18,5 @@ function factory(cmd) {
 }
 
 for(var bin in bins) {
-  factory(bin);
+  factory(bin, bins[bin]);
 }
