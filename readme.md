@@ -46,4 +46,4 @@ fs.read-file-sync process.argv[2] + '.ls', \utf8
 
 licence
 -------
-MIT. &copy 2014 Matt Brennan
+GPL v3. &copy; 2014 Matt Brennan
