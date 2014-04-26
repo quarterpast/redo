@@ -1,18 +1,22 @@
 var spawn = require('child_process').spawn;
+var bins = require('./package.json').bin;
 
-function redo(deps, cb) {
-  spawn('./bin/redo', deps, {stdio: 'inherit'}).on('close', function(code) {
-    if(code !== 0) return process.exit(code);
-    cb();
-  });
+function factory(cmd) {
+  function redo(deps, cb) {
+    spawn('./bin/'+cmd, deps, {stdio: 'inherit'}).on('close', function(code) {
+      if(code !== 0) return process.exit(code);
+      cb();
+    });
+  }
+
+  if(cmd === 'redo') {
+    module.exports = redo;
+  } else {
+    var subCmd = cmd.split('-').pop();
+    module.exports[subCmd] = redo;
+  }
 }
 
-function redoIfChange(deps, cb) {
-  spawn('./bin/redo-ifchange', deps, {stdio: 'inherit'}).on('close', function(code) {
-    if(code !== 0) return process.exit(code);
-    cb();
-  });
+for(var bin in bins) {
+  factory(bin);
 }
-
-redo.ifChange = redoIfChange;
-module.exports = redo;

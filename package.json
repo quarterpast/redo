@@ -15,7 +15,7 @@
     "redo-sources":  "./bin/redo-sources",
     "redo-stamp":    "./bin/redo-stamp",
     "redo-targets":  "./bin/redo-targets",
-    "redo-unlocked": "./bin/redo-unlocked",
+    "redo-unlocked": "./bin/redo-unlocked"
   },
   "repository": {
     "type": "git",
