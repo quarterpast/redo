@@ -3,6 +3,7 @@ var bins = require('./package.json').bin;
 
 function factory(cmd) {
   function redo(deps, cb) {
+    deps = [].concat(deps);
     spawn('./bin/'+cmd, deps, {stdio: 'inherit'}).on('close', function(code) {
       if(code !== 0) return process.exit(code);
       cb();
