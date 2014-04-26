@@ -12,10 +12,9 @@ function factory(cmd) {
 
   if(cmd === 'redo') {
     module.exports = redo;
-  } else {
-    var subCmd = cmd.split('-').pop();
-    module.exports[subCmd] = redo;
   }
+  var subCmd = cmd.split('-').pop();
+  module.exports[subCmd] = redo;
 }
 
 for(var bin in bins) {
