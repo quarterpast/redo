@@ -10,6 +10,14 @@ install
 npm install redo
 ```
 
+Redo itself is packaged under `bin` and exported, so
+
+```
+npm install -g redo
+```
+
+makes the `redo-*` commands available to the system. This is not necessary for the library to work, but it does mean you don't have to type `./node_modules/.bin/redo`. Which is nice.
+
 using
 -----
 
@@ -22,7 +30,7 @@ See the [redo docs](https://github.com/apenwarr/redo#readme) for an overview of 
 var redo = require('redo');
 var fs = require('fs');
 
-redo.ifChange(process.argv[2] + '.lower', function() {
+redo.ifchange(process.argv[2] + '.lower', function() {
   process.stdout.write(
     fs.readFileSync(process.argv[2] + '.lower', 'utf8').toUpperCase()
   );
@@ -36,7 +44,7 @@ It's a bit nicer in Livescript:
 #!/usr/bin/env lsc
 require! [redo, fs, LiveScript]
 
-<- redo.if-change process.argv.2 + '.ls'
+<- redo.ifchange process.argv.2 + '.ls'
 
 fs.read-file-sync process.argv[2] + '.ls', \utf8
 |> LiveScript.compile
