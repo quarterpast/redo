@@ -18,5 +18,5 @@ function factory(cmd, path) {
 }
 
 for(var bin in bins) {
-  factory(bin, bins[bin]);
+  factory(bin, bins[bin].replace(/^\./, __dirname));
 }
